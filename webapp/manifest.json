@@ -1,0 +1,94 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "io.example.fclpoc",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["slbelize_1_71_5", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "io.example.fclpoc.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "fcl"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.f": {}
+			}
+		},
+		"config": {
+			"fullWidth": true
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "io.example.fclpoc.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.f.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "io.example.fclpoc.view",
+				"controlId": "fcl",
+				"transition": "slide",
+				"bypassed": {}
+			},
+			"routes": [ {
+				"pattern": ":layout:",
+				"name": "first",
+				"target": ["First"]
+			}],
+			"targets": {
+				"First": {
+					"viewName": "First",
+					"controlAggregation": "beginColumnPages"
+				}
+			}
+		},
+		"flexEnabled": true
+	}
+}
