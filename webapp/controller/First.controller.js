@@ -13,6 +13,10 @@ sap.ui.define([
 		onInit: function () {
 
 		},
+		onPress: function (evt) {
+			const oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("jobprofile");
+		}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

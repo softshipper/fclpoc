@@ -77,7 +77,16 @@
 				"transition": "slide",
 				"bypassed": {}
 			},
-			"routes": [ {
+			"routes": [
+			 {
+			 	"pattern": "jobprofile",
+				"name": "jobprofile",
+				"target": [
+					"Second",
+					"Third"
+				]
+			 },
+			 {
 				"pattern": ":layout:",
 				"name": "first",
 				"target": ["First"]
@@ -86,6 +95,14 @@
 				"First": {
 					"viewName": "First",
 					"controlAggregation": "beginColumnPages"
+				},
+				"Second": {
+					"viewName": "Second",
+					"controlAggregation": "beginColumnPages"
+				},
+				"Third": {
+					"viewName": "Third",
+					"controlAggregation": "midColumnPages"
 				}
 			}
 		},
