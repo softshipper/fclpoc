@@ -13,8 +13,25 @@
 			data-sap-ui-async="true"
 			data-sap-ui-frameOptions="trusted">
 		</script>
+		
+		<script>
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require([
+					"sap/ui/core/ComponentContainer"
+				], function (ComponentContainer) {
+
+					new ComponentContainer({
+						name : 'io.example.fclpoc',
+						height : "100%",
+						settings : {
+							id : "io.example.fclpoc"
+						}
+					}).placeAt('content');
+				});
+			});
+		</script>
+		
 	</head>
-	<body class="sapUiBody">
-		<div data-sap-ui-component data-name="io.example.fclpoc" data-id="container" data-settings='{"id" : "fclpoc"}'></div>
+	<body class="sapUiBody sapUiSizeCompact" id="content">
 	</body>
 </html>

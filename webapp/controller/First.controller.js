@@ -11,11 +11,17 @@ sap.ui.define([
 		 * @memberOf io.example.fclpoc.view.First
 		 */
 		onInit: function () {
+			const oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("jobprofile", {
+				layout: sap.f.LayoutType.TwoColumnsMidExpanded
+			});
 
 		},
 		onPress: function (evt) {
 			const oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("jobprofile");
+			oRouter.navTo("jobprofile", {
+				layout: sap.f.LayoutType.TwoColumnsMidExpanded
+			});
 		}
 
 		/**

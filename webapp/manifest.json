@@ -79,8 +79,9 @@
 			},
 			"routes": [
 			 {
-			 	"pattern": "jobprofile",
+			 	"pattern": "jobprofile/{layout}",
 				"name": "jobprofile",
+				"layout": "TwoColumnsMidExpanded",
 				"target": [
 					"Second",
 					"Third"

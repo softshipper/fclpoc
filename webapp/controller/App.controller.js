@@ -17,6 +17,7 @@ sap.ui.define([
 		onBeforeRouteMatched: function (oEvent) {
 
 			var oModel = this.getOwnerComponent().getModel();
+		    console.log("Before route matched")
 
 			var sLayout = oEvent.getParameters().arguments.layout;
 
@@ -43,6 +44,8 @@ sap.ui.define([
 
 		_updateLayout: function (sLayout) {
 			var oModel = this.getOwnerComponent().getModel();
+			
+			console.log("Hello")
 
 			// If there is no layout parameter, query for the default level 0 layout (normally OneColumn)
 			if (!sLayout) {
