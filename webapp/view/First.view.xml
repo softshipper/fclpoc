@@ -1,16 +1,25 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="io.example.fclpoc.controller.First"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="First">
-		<content>
+<mvc:View controllerName="io.example.fclpoc.controller.First" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout" height="100%">
+	<f:DynamicPage>
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="First"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<!-- DynamicPage Header -->
+		<f:header></f:header>
+		<f:content>
 			<Text text="This is the first page"/>
-			<Button type="Accept"
-						text="Go to jobprofile"
-						press="onPress"
-						ariaDescribedBy="acceptButtonDescription genericButtonDescription">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-				</Button>
-		</content>
-	</Page>
+			<Button type="Accept" text="Go to jobprofile" press="onPress" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+			</Button>
+		</f:content>
+		<!-- DynamicPage Footer -->
+		<f:footer></f:footer>
+	</f:DynamicPage>
 </mvc:View>

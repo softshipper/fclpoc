@@ -40,6 +40,7 @@ sap.ui.define([
 			if (sLayout) {
 				oModel.setProperty("/layout", sLayout);
 			}
+			
 		},
 
 		_updateLayout: function (sLayout) {
