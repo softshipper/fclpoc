@@ -11,29 +11,17 @@ sap.ui.define([
 			this.oRouter = this.getOwnerComponent().getRouter();
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 			this.oRouter.attachBeforeRouteMatched(this.onBeforeRouteMatched, this);
-			ResizeHandler.register(this.getView().byId("fcl"), this._onResize.bind(this));
 		},
 
 		onBeforeRouteMatched: function (oEvent) {
 
 			var oModel = this.getOwnerComponent().getModel();
-		    console.log("Before route matched")
-
 			var sLayout = oEvent.getParameters().arguments.layout;
 
 			// If there is no layout parameter, query for the default level 0 layout (normally OneColumn)
 			if (!sLayout) {
 				var oNextUIState = this.getOwnerComponent().getHelper().getNextUIState(0);
 				sLayout = oNextUIState.layout;
-			}
-
-			// Optional UX improvement:
-			// The app may want to hide the old view early (before the routing hides it)
-			// to prevent the view being temporarily shown aside the next view (during the transition to the next route)
-			// if the views for both routes do not match semantically
-			if (this.currentRouteName === "first") { // last viewed route was master
-				var oMasterView = this.oRouter.getView("io.example.fclpoc.view.First");
-				this.getView().byId("fcl").removeBeginColumnPage(oMasterView);
 			}
 
 			// Update the layout of the FlexibleColumnLayout
@@ -45,8 +33,6 @@ sap.ui.define([
 
 		_updateLayout: function (sLayout) {
 			var oModel = this.getOwnerComponent().getModel();
-			
-			console.log("Hello")
 
 			// If there is no layout parameter, query for the default level 0 layout (normally OneColumn)
 			if (!sLayout) {
@@ -88,12 +74,7 @@ sap.ui.define([
 		_updateUIElements: function () {
 			var oModel = this.getOwnerComponent().getModel();
 			var oUIState = this.getOwnerComponent().getHelper().getCurrentUIState();
-			oModel.setData(oUIState, true);
-		},
-
-		_onResize: function (oEvent) {
-			var bPhone = (oEvent.size.width < FlexibleColumnLayout.TABLET_BREAKPOINT);
-			this.getOwnerComponent().getModel().setProperty("/isPhone", bPhone);
+			oModel.setData(oUIState);
 		},
 
 		onExit: function () {
